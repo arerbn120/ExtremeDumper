@@ -2,22 +2,23 @@
 	<PropertyGroup>
 		<UseWindowsForms>true</UseWindowsForms>
 		<Description>.NET Assemblies Dumper</Description>
-		<ApplicationIcon>..\ExtremeDumper\Images\ExtremeDumper.ico</ApplicationIcon>
+		<ApplicationIcon>.\Images\ExtremeDumper.ico</ApplicationIcon>
 	</PropertyGroup>
 	<PropertyGroup>
-		<TargetFramework>net462</TargetFramework>
-		<OutputType>Exe</OutputType>
+		<TargetFrameworks>net481;net8.0-windows</TargetFrameworks>
+		<OutputType>WinExe</OutputType>
 		<OutputPath>..\bin\$(Configuration)</OutputPath>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
 	</PropertyGroup>
 	<ItemGroup>
-		<EmbeddedResource Include="..\ExtremeDumper.LoaderHook\bin\Win32\$(Configuration)\ExtremeDumper.LoaderHook.dll" Link="costura32\ExtremeDumper.LoaderHook.dll" />
-		<EmbeddedResource Include="..\ExtremeDumper.LoaderHook\bin\x64\$(Configuration)\ExtremeDumper.LoaderHook.dll" Link="costura64\ExtremeDumper.LoaderHook.dll" />
+		<EmbeddedResource Include="..\ExtremeDumper.LoaderHook\bin\Win32\$(Configuration)\ExtremeDumper.LoaderHook.dll" Link="costura32\ExtremeDumper.LoaderHook.dll" Condition="Exists('..\ExtremeDumper.LoaderHook\bin\Win32\$(Configuration)\ExtremeDumper.LoaderHook.dll')" />
+		<EmbeddedResource Include="..\ExtremeDumper.LoaderHook\bin\x64\$(Configuration)\ExtremeDumper.LoaderHook.dll" Link="costura64\ExtremeDumper.LoaderHook.dll" Condition="Exists('..\ExtremeDumper.LoaderHook\bin\x64\$(Configuration)\ExtremeDumper.LoaderHook.dll')" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Costura.Fody" Version="4.1.0" />
-		<PackageReference Include="dnlib" Version="3.4.0" />
-		<PackageReference Include="Microsoft.Diagnostics.Runtime" Version="1.1.142101" />
+		<PackageReference Include="Costura.Fody" Version="5.2.0" />
+		<PackageReference Include="dnlib" Version="4.5.0" />
+		<PackageReference Include="Microsoft.Diagnostics.Runtime" Version="3.1.328701" />
 		<PackageReference Include="NativeSharp-lib" Version="3.0.0.1" />
 		<PackageReference Include="Ookii.Dialogs.WinForms" Version="4.0.0" />
 	</ItemGroup>

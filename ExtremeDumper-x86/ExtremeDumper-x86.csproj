@@ -1,18 +1,19 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 	<PropertyGroup>
 		<UseWindowsForms>true</UseWindowsForms>
-		<Description>.NET Assemblies Dumper</Description>
+		<Description>.NET Assemblies Dumper (x86)</Description>
 		<ApplicationIcon>..\ExtremeDumper\Images\ExtremeDumper.ico</ApplicationIcon>
 	</PropertyGroup>
 	<PropertyGroup>
-		<TargetFramework>net462</TargetFramework>
+		<TargetFrameworks>net481;net8.0-windows</TargetFrameworks>
 		<PlatformTarget>x86</PlatformTarget>
-		<OutputType>Exe</OutputType>
+		<OutputType>WinExe</OutputType>
 		<OutputPath>..\bin\$(Configuration)</OutputPath>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<RuntimeIdentifiers>win-x86</RuntimeIdentifiers>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Costura.Fody" Version="4.1.0" />
+		<PackageReference Include="Costura.Fody" Version="5.2.0" />
 	</ItemGroup>
 	<Target Name="ClearReferenceCopyLocalPaths" AfterTargets="ResolveAssemblyReferences">
 		<ItemGroup>

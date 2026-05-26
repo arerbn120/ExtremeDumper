@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net35</TargetFramework>
+		<TargetFrameworks>net35;net481;net8.0</TargetFrameworks>
+		<Description>.NET Anti Anti-Dump Module</Description>
 	</PropertyGroup>
 	<Import Project="..\ExtremeDumper.Common.props" />
 	<ItemGroup>
