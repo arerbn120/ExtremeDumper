@@ -60,7 +60,7 @@ Click 'Open Loader Hook' in main window and you will see 'Loader Hook' window. S
 Rename 'ExtremeDumper.LoaderHook.dll' to 'version.dll' and put it in the root of the program. It can be loaded in dll hijack mode.
 
 #### Principle
-Loader hook will hook 'clr!AssemblyNative::LoadImage' at startup of the application. When any .NET assembly is loaded  by apis like 'Assembly.Load(byte[])', loader hook will save raw byte array to disk.
+Loader hook will hook 'clr!AssemblyNative::LoadImage' at startup of the  application. When any .NET assembly is loaded  by apis like 'Assembly.Load(byte[])', loader hook will save raw byte array to disk.
 
 ## Downloads
 GitHub: [Latest release](https://github.com/wwh1004/ExtremeDumper/releases/latest/download/ExtremeDumper.zip)
